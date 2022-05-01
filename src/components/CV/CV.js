@@ -1,3 +1,5 @@
+import "./CV.css";
+
 function CV(props) {
   function print() {
     window.print();

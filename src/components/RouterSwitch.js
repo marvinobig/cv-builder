@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useState } from "react";
-import Nav from "./navbar/navbar";
-import App from "./main/App";
+import Nav from "./navbar/NavBar";
+import HomePage from "./HomePage";
 import CVForm from "./form/CVForm";
 import CV from "./CV/CV";
 
@@ -15,7 +15,7 @@ function RouterSwitch() {
     <BrowserRouter>
       <Nav />
       <Routes>
-        <Route index element={<App />} />
+        <Route index element={<HomePage />} />
         <Route
           path="/start"
           element={

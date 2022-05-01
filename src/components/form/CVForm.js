@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import "./CVForm.css";
 
 function CVForm(props) {
   const navigate = useNavigate();
@@ -41,6 +42,8 @@ function CVForm(props) {
 
     institutionInput.value = "";
     qualificationInput.value = "";
+    startedInput.value = "";
+    endedInput.value = "";
   }
 
   // work
@@ -62,6 +65,8 @@ function CVForm(props) {
 
     companyInput.value = "";
     descriptionInput.value = "";
+    startedInput.value = "";
+    endedInput.value = "";
   }
 
   // skills
