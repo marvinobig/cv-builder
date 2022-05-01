@@ -15,7 +15,7 @@ function RouterSwitch() {
     <BrowserRouter>
       <Nav />
       <Routes>
-        <Route index element={<HomePage />} />
+        <Route path="/cv-builder" element={<HomePage />} />
         <Route
           path="/start"
           element={

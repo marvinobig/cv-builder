@@ -4,7 +4,7 @@ import "./NavBar.css";
 function Nav() {
   return (
     <nav className="nav">
-      <Link to="/">
+      <Link to="/cv-builder">
         <p className="nav__title">CV Builder</p>
       </Link>
       <Link to="/start">
