@@ -19,7 +19,7 @@ This application is a CV web app that allows users to build a CV/resume from the
 
 ## Live Link
 
-[CV Builder]()
+[CV Builder](https://marvinobig.github.io/cv-builder/)
 
 ## Installation
 
