@@ -1,0 +1,93 @@
+.cv {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 40px;
+  }
+  
+  .cv__action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-block: 10px;
+  }
+  
+  .cv__action__title {
+    text-transform: uppercase;
+  }
+  
+  .cv__personal__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 40px;
+  }
+  
+  .cv__personal__info__contact {
+    display: flex;
+    flex-direction: column;
+    align-items:flex-end;
+    gap: 8px;
+  }
+  
+  .cv__personal__info__name {
+    font-size: 24px;
+    font-weight: 900;
+    margin: 0;
+  }
+  
+  .cv__personal__info__contact p {
+    margin: 0;
+  }
+  
+  .cv__personal__summary__title, .cv__education__title, .cv__work__title, .cv__skills__title {
+    text-transform: uppercase;
+  }
+  
+  .cv__work__details__title, .cv__education__details__title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  
+  .cv__education__details__title p, h3 {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .cv__work__details__title p, h3 {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .cv__skills__list {
+    display: flex;
+    justify-content: flex-start; 
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 0;
+  }
+  
+  .cv__skills__list__item {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    border-left: 4px solid #000000;
+    list-style-type: none;
+  }
+  
+  /* printing */
+  @media print {
+    .nav {
+      display: none;
+    }
+    
+    .cv__action{
+      display: none;
+    }
+  
+    .cv__title {
+      display: none;
+    }
+  }
