@@ -179,6 +179,23 @@ a {
   text-transform: uppercase;
 }
 
+.cv__work__details__title, .cv__education__details__title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.cv__education__details__title p, h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.cv__work__details__title p, h3 {
+  margin: 0;
+  padding: 0;
+}
+
 .cv__skills__list {
   display: flex;
   justify-content: flex-start; 
