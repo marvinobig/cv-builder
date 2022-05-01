@@ -1,18 +1,16 @@
 # CV Builder
 
-This application is a CV website that allows users to build a CV/resume from the ground up.
+This application is a CV web app that allows users to build a CV/resume from the ground up.
 
 ## Features
 
 - Create CVs from the ground up.
-- Edit you CVs.
 - Print your CVs.
-- Form validation.
 
 ## Languages/Tools used:
 
 - React
-- CSS modules
+- React Router
 - Webpack
 - Visual Studio Code
 - Firefox Dev Tools
