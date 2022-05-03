@@ -12,7 +12,7 @@ function Header() {
         full-time job.
       </p>
       <p className="header__p3">You're in the right place.</p>
-      <Link to="/start">
+      <Link to="start">
         <button className="btn btn--green">Start</button>
       </Link>
     </header>

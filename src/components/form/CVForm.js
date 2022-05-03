@@ -20,7 +20,7 @@ function CVForm(props) {
       summary: summary.value,
     });
 
-    navigate("/create");
+    navigate("/cv-builder/create");
   }
 
   // education

@@ -4,6 +4,7 @@ import Nav from "./navbar/NavBar";
 import HomePage from "./HomePage";
 import CVForm from "./form/CVForm";
 import CV from "./CV/CV";
+import NoMatch from "./NoMatch";
 
 function RouterSwitch() {
   const [personalInfo, setPersonalInfo] = useState({});
@@ -17,7 +18,7 @@ function RouterSwitch() {
       <Routes>
         <Route path="/cv-builder" element={<HomePage />} />
         <Route
-          path="/start"
+          path="/cv-builder/start"
           element={
             <CVForm
               setPersonalInfo={setPersonalInfo}
@@ -31,7 +32,7 @@ function RouterSwitch() {
           }
         />
         <Route
-          path="/create"
+          path="cv-builder/create"
           element={
             <CV
               personalInfo={personalInfo}
@@ -41,6 +42,7 @@ function RouterSwitch() {
             />
           }
         />
+        <Route path="*" element={<NoMatch />} />
       </Routes>
     </BrowserRouter>
   );
