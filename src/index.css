@@ -45,6 +45,10 @@ a {
   background-color: #71c756;
 }
 
+.btn--red {
+  background-color: #cc3b3b;
+}
+
 .btn--transparentBg {
   background-color: transparent;
 }
@@ -56,6 +60,11 @@ a {
 
 .btn--greenText {
   color: #335629;;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
 }
 
 .error {

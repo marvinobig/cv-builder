@@ -9,6 +9,7 @@ function CVForm(props) {
     const firstName = document.getElementById("first-name");
     const lastName = document.getElementById("last-name");
     const email = document.getElementById("email");
+    const online = document.getElementById("online");
     const telephone = document.getElementById("tel");
     const summary = document.getElementById("summary");
 
@@ -16,6 +17,7 @@ function CVForm(props) {
       firstName: firstName.value,
       lastName: lastName.value,
       email: email.value,
+      online: online.value,
       telephone: telephone.value,
       summary: summary.value,
     });
@@ -24,8 +26,10 @@ function CVForm(props) {
   }
 
   // education
+
   function addEducation() {
     const studies = [];
+
     const institutionInput = document.getElementById("institution");
     const qualificationInput = document.getElementById("qualification");
     const startedInput = document.getElementById("study-started");
@@ -46,9 +50,22 @@ function CVForm(props) {
     endedInput.value = "";
   }
 
+  function removeEducation() {
+    const currentStudy = props.education;
+    const lastIndex = currentStudy.length - 1;
+
+    if (lastIndex >= 0) {
+      props.setEducation((prevStudy) =>
+        prevStudy.filter((selectedStudy, index) => index !== lastIndex)
+      );
+    }
+  }
+
   // work
+
   function addWork() {
     const job = [];
+
     const companyInput = document.getElementById("company");
     const descriptionInput = document.getElementById("work");
     const startedInput = document.getElementById("work-started");
@@ -69,16 +86,39 @@ function CVForm(props) {
     endedInput.value = "";
   }
 
+  function removeWork() {
+    const currentWork = props.work;
+    const lastIndex = currentWork.length - 1;
+
+    if (lastIndex >= 0) {
+      props.setWork((prevWork) =>
+        prevWork.filter((selectedWork, index) => index !== lastIndex)
+      );
+    }
+  }
+
   // skills
+
   function addSkill() {
     const skills = [];
+
     const skillInput = document.getElementById("skills");
 
     skills.push(skillInput.value);
-
     props.setSkill((skill) => [...skill, ...skills]);
 
     skillInput.value = "";
+  }
+
+  function removeSkill() {
+    const currentSkills = props.skill;
+    const lastIndex = currentSkills.length - 1;
+
+    if (lastIndex >= 0) {
+      props.setSkill((prevSkill) =>
+        prevSkill.filter((selectedSkill, index) => index !== lastIndex)
+      );
+    }
   }
 
   return (
@@ -93,6 +133,9 @@ function CVForm(props) {
 
         <label htmlFor="email">Email</label>
         <input type="email" name="email" id="email" />
+
+        <label htmlFor="online">Website/Social Link</label>
+        <input type="text" name="online" id="online" />
 
         <label htmlFor="tel">Telephone</label>
         <input type="tel" name="tel" id="tel" />
@@ -118,9 +161,34 @@ function CVForm(props) {
 
         <p>You've added: {props.education.length} Education</p>
 
-        <button type="button" className="btn btn--green" onClick={addEducation}>
-          Add
-        </button>
+        <div className="actions">
+          <button
+            type="button"
+            className="btn btn--green"
+            onClick={addEducation}
+          >
+            Add
+          </button>
+          <button
+            type="button"
+            className="btn btn--red"
+            onClick={removeEducation}
+          >
+            Delete
+          </button>
+        </div>
+
+        <div>
+          {props.education.map((added, index) => (
+            <div key={index}>
+              <h2>{added.institution}</h2>
+              <p>
+                Started: {added.started} / Ended: {added.ended}
+              </p>
+              <h4>{added.qualification}</h4>
+            </div>
+          ))}
+        </div>
       </fieldset>
 
       <fieldset>
@@ -140,22 +208,49 @@ function CVForm(props) {
 
         <p>You've added: {props.work.length} Work</p>
 
-        <button type="button" className="btn btn--green" onClick={addWork}>
-          Add
-        </button>
+        <div className="actions">
+          <button type="button" className="btn btn--green" onClick={addWork}>
+            Add
+          </button>
+          <button type="button" className="btn btn--red" onClick={removeWork}>
+            Delete
+          </button>
+        </div>
+
+        <div>
+          {props.work.map((added, index) => (
+            <div key={index}>
+              <h2>{added.company}</h2>
+              <p>
+                Started: {added.started} / Ended: {added.ended}
+              </p>
+              <p>{added.description}</p>
+            </div>
+          ))}
+        </div>
       </fieldset>
 
       <fieldset>
         <legend>Current Skills</legend>
-
         <label htmlFor="skills">Skilled At</label>
         <input type="text" name="skills" id="skills" />
-
         <p>You've added: {props.skill.length} Skills</p>
+        <div className="actions">
+          <button type="button" className="btn btn--green" onClick={addSkill}>
+            Add
+          </button>
+          <button type="button" className="btn btn--red" onClick={removeSkill}>
+            Delete
+          </button>
+        </div>
 
-        <button type="button" className="btn btn--green" onClick={addSkill}>
-          Add
-        </button>
+        <div>
+          {props.skill.map((added, index) => (
+            <div key={index}>
+              <p>{added}</p>
+            </div>
+          ))}
+        </div>
       </fieldset>
 
       <button

@@ -13,6 +13,7 @@ function CV(props) {
 
           <div className="cv__personal__info__contact">
             <p>{props.personalInfo.email}</p>
+            <p>{props.personalInfo.online}</p>
             <p>{props.personalInfo.telephone}</p>
           </div>
         </div>
